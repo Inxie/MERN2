@@ -29,15 +29,13 @@ const ToDo = (props) => {
 
     return (
         <div>
-            <div>
-                <h2>Tasks:</h2>
-                <form onSubmit={addTask}>
-                    <label>Add a Task</label>
-                    <br />
-                    <input onChange={changeHandler} type="text" name="add"></input>
-                </form>
-                <button type="submit">Add</button>
-            </div>
+            <h2>Tasks:</h2>
+            <form onSubmit={addTask}>
+                <label>Add a Task</label>
+                <br />
+                <input onChange={changeHandler} type="text" name="add"></input>
+                <input type="submit" value="Add" />
+            </form>
             <br />
             <br />
             <div>
@@ -47,7 +45,6 @@ const ToDo = (props) => {
                             <div key={i} style={{ textDecoration: oneTask.isComplete ? "line-through" : "" }}>
                                 <p>{oneTask.add}</p>
                                 <p><input onClick={() => toggleTask(i)} type="checkbox" name="" id="" /></p>
-                                <p>{oneTask.isComplete == true ? "Completed! Great work" : "Not yet"}</p>
                                 <p><button onClick={() => deleteTask(i)} className="btn btn-danger">Delete Task</button></p>
                             </div>
                         )
