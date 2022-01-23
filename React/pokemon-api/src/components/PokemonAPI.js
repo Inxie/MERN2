@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const PokemonAPI = () => {
 
@@ -6,8 +7,12 @@ const PokemonAPI = () => {
 
     const getPokemon = () => {
         fetch("https://pokeapi.co/api/v2/pokemon?limit=1000")
-        .then(response => {response.json()})
-        .then(response => {setAllPokemon(response.results)})
+        .then(response => {
+            return response.json()
+        })
+        .then(response => {
+            setAllPokemon(response.results)
+        })
 
         .catch(err =>{
             console.log("ERROR!", err)
@@ -25,6 +30,7 @@ const PokemonAPI = () => {
                 })
             }
         </div>
-    );
+    )
 }
+
 export default PokemonAPI;
