@@ -8,7 +8,7 @@ const PokemonAPI = () => {
     const getPokemon = () => {
         axios.get("https://pokeapi.co/api/v2/pokemon?limit=1000")
         .then(response => {
-            setAllPokemon(response.data)
+            setAllPokemon(response.data.results)
         })
 
         .catch(err => {
