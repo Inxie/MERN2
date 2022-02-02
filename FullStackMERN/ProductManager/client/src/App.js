@@ -1,6 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
 import ProductForm from './components/ProductForm';
+import ProductList from './components/ProductList';
+import OneProduct from './components/OneProduct';
+
 import {
   BrowserRouter,
   Link,
@@ -9,13 +12,19 @@ import {
 } from "react-router-dom";
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">
-        <h2>Product Form</h2>
         <Switch>
           <Route exact path="/">
             <ProductForm></ProductForm>
+            <hr />
+            <ProductList></ProductList>
+          </Route>
+
+          <Route exact path="/products/:id">
+            <OneProduct></OneProduct>
           </Route>
         </Switch>
       </div>
