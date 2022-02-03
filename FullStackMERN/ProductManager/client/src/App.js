@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
 import OneProduct from './components/OneProduct';
+import EditProduct from './components/EditProduct';
 
 import {
   BrowserRouter,
@@ -25,6 +26,10 @@ function App() {
 
           <Route exact path="/products/:id">
             <OneProduct></OneProduct>
+          </Route>
+
+          <Route exact path="/products/:id/edit">
+            <EditProduct></EditProduct>
           </Route>
         </Switch>
       </div>

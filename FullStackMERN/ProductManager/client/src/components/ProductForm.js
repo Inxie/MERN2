@@ -7,10 +7,9 @@ const ProductForm = (props) => {
     let [title, setTitle] = useState("");
     let [price, setPrice] = useState(0);
     let [description, setDescription] = useState("");
+    let [formErrors, setFormErrors] = useState({})
 
     const history = useHistory();
-
-    let [formErrors, setFormErrors] = useState({})
 
     const createSubmitHandler = (e) => {
         e.preventDefault();
